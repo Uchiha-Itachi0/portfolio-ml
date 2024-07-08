@@ -33,9 +33,9 @@ const makeRequest = async <T>(
     try {
         const response: AxiosResponse<T, any> = await axiosInstance.request<T>(config);
         return response.data;
+        // return response
     } catch (error: any) {
-        console.log("This is the error message", error.response.data.message)
-        return error.response.data
+        throw error
         // throw new Error(error.response?.data?.message || error.message);
     }
 };

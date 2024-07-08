@@ -57,7 +57,7 @@ const Snackbar: React.FC<SnackbarProps> = ({ message, duration = 3000, onClose }
     }, [duration, closeSnackbar]);
 
     return createPortal(
-        <div className={`fixed bottom-0 left-0 right-0 flex justify-center p-4 transition-transform duration-500 ease-in-out ${visible ? 'translate-y-0' : 'translate-y-full'} ${exiting ? 'translate-y-full' : ''}`}>
+        <div className={`fixed z-100 bottom-0 left-0 right-0 flex justify-center p-4 transition-transform duration-500 ease-in-out ${visible ? 'translate-y-0' : 'translate-y-full'} ${exiting ? 'translate-y-full' : ''}`}>
             <div className="bg-gray-800 text-white px-4 py-2 rounded shadow-md flex flex-col items-center w-full max-w-sm">
                 <span>{message}</span>
                 <div className="w-full h-1 bg-gray-600 mt-2">
