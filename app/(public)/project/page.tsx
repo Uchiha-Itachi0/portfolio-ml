@@ -4,6 +4,7 @@ import React, {useEffect, useState} from "react";
 import Loader from "@/components/loader";
 import getProjectData from "@/app/hooks/get_project_data";
 import {Project} from "@/utils/types";
+import {projectData} from "@/utils/data";
 
 export default function ProjectPage() {
 
@@ -14,10 +15,10 @@ export default function ProjectPage() {
     return (
         <div className={`mx-4 sm:mx-10 lg:mx-24`}>
             <div className={`flex flex-col gap-14`}>
-                {loading ? (
-                    <Loader />
-                ) : (
-                    projectsData.map((project: Project, index: number) => (
+                {/*{loading ? (*/}
+                {/*    <Loader />*/}
+                {/*) : (*/}
+                {projectData.slice().reverse().map((project: Project, index: number) => (
                         <CardComponent
                             type={'project'}
                             key={project.id}
@@ -29,7 +30,7 @@ export default function ProjectPage() {
                             tags={project.tags}
                         />
                     ))
-                )}
+                }
             </div>
         </div>
     );

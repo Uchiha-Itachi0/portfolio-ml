@@ -3,10 +3,11 @@ import React from "react";
 import Loader from "@/components/loader";
 import Snackbar from "@/components/snack_bar";
 import getAboutData from "@/app/hooks/get_about_data";
+import {aboutData} from "@/utils/data";
 
 export default function AboutPage() {
     
-    const {aboutData, loading, error} = getAboutData();
+    // const {aboutData, loading, error} = getAboutData();
 
     const [snackbar, setSnackbar] = React.useState({
         show: false,
@@ -23,13 +24,13 @@ export default function AboutPage() {
     });
 
 
-    if(loading){
-        return <div className="fixed bg-black top-0 bottom-0 left-0 right-0 flex items-center justify-center"><Loader /></div>;
-    }
-
-    if (error.length > 0){
-        setSnackbar({show: true, message: error})
-    }
+    // if(loading){
+    //     return <div className="fixed bg-black top-0 bottom-0 left-0 right-0 flex items-center justify-center"><Loader /></div>;
+    // }
+    //
+    // if (error.length > 0){
+    //     setSnackbar({show: true, message: error})
+    // }
     return (
         <>
             {snackbar.show && <Snackbar message={snackbar.message} onClose={() => setSnackbar({show: false, message: ''})} />}
