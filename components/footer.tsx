@@ -44,12 +44,12 @@ export default function Footer() {
                     <Link href={'/blogs'}>Blog</Link>
                     <Link href={'/project'}>Project</Link>
                     <Link href={'/about'}>About</Link>
-                    <Link href={'http://localhost:3000/resume.pdf'} target={'_blank'}>Resume</Link>
+                    <Link href={'https://anubhav008shukla.netlify.app/resume.pdf'} target={'_blank'}>Resume</Link>
                 </div>
                 <div className={`flex flex-wrap items-center justify-center sm:flex-row gap-10`}>
-                    <a href={'#'}><FaGithub /></a>
-                    <a href={'#'}><FaLinkedin /></a>
-                    <a href={'#'}><AiFillInstagram /></a>
+                    <a href={'https://github.com/Uchiha-Itachi0'}><FaGithub /></a>
+                    <a href={'https://www.linkedin.com/in/anubhav008shukla/'}><FaLinkedin /></a>
+                    <a href={'https://www.instagram.com/anubhav008shukla/'}><AiFillInstagram /></a>
                 </div>
             </div>
         </div>

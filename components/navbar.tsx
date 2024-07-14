@@ -25,7 +25,7 @@ export default function Navbar(){
                     <Link href={'/blogs'}>Blog</Link>
                     <Link href={'/project'}>Project</Link>
                     <Link href={'/about'}>About</Link>
-                    <Link href={"http://localhost:3000/resume.pdf"} target={'_blank'}>Resume</Link>
+                    <Link href={"https://anubhav008shukla.netlify.app/resume.pdf"} target={'_blank'}>Resume</Link>
                     <Link href={'#footer'}>Contact</Link>
                 </div>
                 <button onClick={() => setNavVisible(!navVisible)} className={`block sm:hidden `}>Menu</button>
@@ -69,7 +69,7 @@ export default function Navbar(){
                         <span className={`mr-6 bg-green translate-y-[50%] h-min rounded-full p-4`}>
                             <span className={`text-[5vw] sm:text-[4vw] font-extrabold`} >05</span>
                         </span>
-                        <Link href={"http://localhost:3000/resume.pdf"} target={'_blank'} onClick={() => setNavVisible(!navVisible)}>Resume</Link>
+                        <Link href={"https://anubhav008shukla.netlify.app/resume.pdf"} target={'_blank'} onClick={() => setNavVisible(!navVisible)}>Resume</Link>
                     </div>
                 </div>
             </nav>}
