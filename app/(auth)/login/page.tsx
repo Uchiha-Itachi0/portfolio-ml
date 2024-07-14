@@ -9,6 +9,8 @@ import {verifyTokenResponse} from "@/utils/types";
 import Snackbar from "@/components/snack_bar";
 import {useRouter} from "next/navigation";
 import Loader from "@/components/loader";
+import Cookies from "js-cookie"
+
 
 export default function LoginPage() {
 
@@ -37,7 +39,7 @@ export default function LoginPage() {
                 setLoading(false);
             }
         };
-        const token: string = localStorage.getItem('token') || '';
+        const token: string = Cookies.get('token') || '';
         if (token.length > 0) {
             validateToken(token)
                 .then((isValid) => {
@@ -53,6 +55,7 @@ export default function LoginPage() {
         } else {
             setSnackbarMessage('Ahh! You are logged out Please login again');
             dispatch(setAuth(false));
+            setLoading(false);
         }
         toggleSnackbar(true);
     }, [dispatch]);
@@ -67,7 +70,8 @@ export default function LoginPage() {
             if (response.status === 200) {
                 setSnackbarMessage('Logged in successfully');
                 toggleSnackbar(true);
-                localStorage.setItem('token', response.access);
+                console.log(response)
+                Cookies.set('token', response.access, { expires: 7, secure: true, sameSite: 'strict' });
                 dispatch(setAuth(true));
                 router.push('/');
             } else {

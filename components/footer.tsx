@@ -1,10 +1,25 @@
+'use client'
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
 import Link from "next/link";
+import Snackbar from "@/components/snack_bar";
+import React from "react";
 export default function Footer() {
+
+    const email = "anubhav008shukla@gmail.com";
+    const [showSnackbar, setShowSnackbar] = React.useState<boolean>(false);
+    const copyToClipboard = () => {
+        navigator.clipboard.writeText(email).then(() => {
+            setShowSnackbar(true);
+        }).catch((error) => {
+            console.error("Error copying email to clipboard: ", error);
+        });
+    };
+
     return (
         <div id={'footer'}>
+            {showSnackbar && <Snackbar message={'Email copied to clipboard'} onClose={() => setShowSnackbar(false)} />}
             <div className={`flex flex-col items-center justify-center gap-20 mx-4 sm:mx-10 lg:mx-24 mt-20 sm:mt-40 pb-6`}>
                 <div className={`w-full sm:w-[80%] lg:w-[65%] text-center font-bold text-[3vw]  sm:text-[2vw] lg:text-[1.3vw]`}>
                     <h1 className={`leading-[5.5vw] sm:leading-[5vw] lg:leading-[3vw] text-[5.5vw] sm:text-[5vw] lg:text-[3vw] font-extrabold`}>Hey <span className={`text-red`}>there!</span> Got something <span className={`text-primary_blue`}>on your mind?</span></h1>
@@ -19,21 +34,8 @@ export default function Footer() {
                     <p className={`text-right`}>Anubhav Shukla</p>
                     <br />
                     <p>P.S. If you're a robot, please be nice and use binary code for your message. Thanks!</p>
-                </div>
-                <div className={`w-full sm:w-[80%] lg:w-[65%]  text-[3vw] sm:text-[2vw] lg:text-[1vw] flex flex-col gap-4`}>
-                    <div className={`flex flex-col gap-3`}>
-                        <p>Your email</p>
-                        <input type="email" placeholder="anubhav008shukla@gmail.com" className={`text-1vw w-full p-4 bg-transparent border-black-white border-[1px] focus:outline-0 rounded-lg`} />
-
-                    </div>
-                    <div className={`flex flex-col gap-3`}>
-                        <p>Subject</p>
-                        <input type="text" placeholder="Good Work" className={`text-1vw w-full p-4 bg-transparent border-black-white border-[1px] focus:outline-0 rounded-lg`} />
-                    </div>
-                    <div className={`flex flex-col gap-3`}>
-                        <p>Message</p>
-                        <textarea rows={5} placeholder="Someting nice" className={` text-1vw w-full p-4 rounded-lg border-black-white border-[1px] focus:outline-0 bg-transparent`} />
-                    </div>
+                    <br />
+                    <p className="underline cursor-pointer" onClick={copyToClipboard}>{email}</p>
                 </div>
 
             </div>
