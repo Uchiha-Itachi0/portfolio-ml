@@ -167,15 +167,20 @@ export const projectData: Project[] = [
 ]
 
 export const aboutData = {
-    content: 'I am a software engineer with a passion for machine learning and artificial intelligence. I have experience in building web applications, machine learning models, and deploying them to the cloud. I am proficient in Python, JavaScript, and Java. I have experience with frameworks like React, Flask, and Spring Boot. I am also familiar with cloud platforms like AWS, Azure, and GCP.',
-    skills: ['Python', 'JavaScript', 'Java', 'React', 'Flask', 'Spring Boot', 'AWS', 'Azure', 'GCP'],
+    content: 'I am an aspiring Machine Learning Engineer with a strong passion ' +
+        'for AI and problem-solving. Currently pursuing a B.Tech, I have hands-on experience in ' +
+        'developing web applications, building machine learning models, and integrating them into ' +
+        'cross-platform applications. I am proficient in Python, JavaScript, Rust, and Dart, ' +
+        'with experience in frameworks like React, Django, and Angular. I am also skilled in ' +
+        'deploying solutions on cloud platforms such as AWS',
+    skills: ['Python', 'JavaScript', 'Rust', 'Dart', 'Django', 'React', 'Angular', 'AWS', 'Docker'],
     color_text: [
-        "software engineer",
-        "passion",
+        "Machine Learning Engineer",
+        "AI and problem-solving",
+        "developing",
         "building",
-        "deploying",
-        "I am proficient",
-        "I have experience with"
+        "integrating",
+        "I am proficient"
     ],
     colors: [
         "text-blue",
